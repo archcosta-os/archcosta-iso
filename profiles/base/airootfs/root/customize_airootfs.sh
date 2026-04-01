@@ -20,6 +20,7 @@ echo "liveuser:" | chpasswd -e
 echo "root:" | chpasswd -e
 
 # Passwordless sudo for live user
+install -dm755 /etc/sudoers.d
 echo "liveuser ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/10-liveuser
 chmod 440 /etc/sudoers.d/10-liveuser
 
