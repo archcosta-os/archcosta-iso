@@ -1,0 +1,150 @@
+# ArchCosta Base Packages
+# Shared across all editions
+
+# Base system
+base
+base-devel
+linux
+linux-headers
+linux-firmware
+mkinitcpio
+mkinitcpio-archiso
+mkinitcpio-nfs-utils
+
+# Boot
+grub
+efibootmgr
+os-prober
+syslinux
+
+# Filesystem
+btrfs-progs
+dosfstools
+e2fsprogs
+exfatprogs
+f2fs-tools
+ntfs-3g
+xfsprogs
+
+# Network
+networkmanager
+network-manager-applet
+nm-connection-editor
+wpa_supplicant
+wireless_tools
+iwd
+dhcpcd
+dnsmasq
+openssh
+curl
+wget
+
+# Bluetooth
+bluez
+bluez-utils
+blueman
+
+# Audio
+pipewire
+pipewire-alsa
+pipewire-jack
+pipewire-pulse
+wireplumber
+pavucontrol
+alsa-utils
+
+# Graphics
+mesa
+vulkan-icd-loader
+xf86-video-amdgpu
+xf86-video-ati
+xf86-video-intel
+xf86-video-nouveau
+xf86-video-vesa
+xorg-server
+xorg-xinit
+xorg-xrandr
+xorg-xdpyinfo
+
+# Fonts
+noto-fonts
+noto-fonts-cjk
+noto-fonts-emoji
+ttf-dejavu
+ttf-liberation
+ttf-hack-nerd
+ttf-jetbrains-mono-nerd
+ttf-cascadia-code-nerd
+
+# Terminal & Shell
+zsh
+zsh-completions
+zsh-autosuggestions
+zsh-syntax-highlighting
+bash-completion
+fish
+alacritty
+kitty
+
+# File management
+thunar
+thunar-archive-plugin
+thunar-volman
+gvfs
+gvfs-mtp
+gvfs-nfs
+gvfs-smb
+tumbler
+file-roller
+p7zip
+unzip
+unrar
+
+# System tools
+htop
+btop
+neofetch
+fastfetch
+reflector
+pacman-contrib
+pkgfile
+man-db
+man-pages
+texinfo
+nano
+vim
+git
+power-profiles-daemon
+tlp
+ufw
+firewalld
+
+# Installer
+calamares
+calamares-oem
+
+# Hardware
+xdg-utils
+xdg-user-dirs
+udisks2
+upower
+acpi
+acpid
+lm_sensors
+dmidecode
+smartmontools
+
+# Plymouth
+plymouth
+
+# Printing
+cups
+cups-pdf
+system-config-printer
+
+# Archiso live environment
+arch-install-scripts
+memtest86+
+nbd
+squashfs-tools
+syslinux

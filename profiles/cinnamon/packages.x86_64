@@ -1,0 +1,55 @@
+# ArchCosta Cinnamon Edition Packages
+
+# Cinnamon Desktop
+cinnamon
+cinnamon-translations
+nemo
+nemo-fileroller
+nemo-preview
+nemo-share
+xed
+xreader
+xviewer
+pix
+gnome-terminal
+
+# Display Manager — LightDM (Cinnamon Edition)
+lightdm
+lightdm-slick-greeter
+lightdm-settings
+
+# Themes & Appearance
+arc-gtk-theme
+papirus-icon-theme
+kvantum
+qt5ct
+qt6ct
+mint-themes
+mint-y-icons
+
+# Applications
+firefox
+thunderbird
+vlc
+gimp
+libreoffice-fresh
+transmission-gtk
+evince
+gnome-calculator
+gnome-screenshot
+gnome-system-monitor
+drawing
+celluloid
+
+# System tools
+gparted
+timeshift
+gnome-disk-utility
+baobab
+gufw
+
+# Cinnamon Integration
+xdg-desktop-portal-xapp
+cinnamon-control-center
+cinnamon-screensaver
+blueberry

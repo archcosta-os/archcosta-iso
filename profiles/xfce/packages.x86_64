@@ -1,0 +1,48 @@
+# ArchCosta XFCE Edition Packages
+
+# XFCE Core
+xfce4
+xfce4-goodies
+xfce4-whiskermenu-plugin
+xfce4-pulseaudio-plugin
+xfce4-clipman-plugin
+xfce4-screenshooter
+xfce4-taskmanager
+xfce4-weather-plugin
+xfce4-notifyd
+xfce4-power-manager
+xfce4-terminal
+
+# Display Manager — LightDM (XFCE Edition)
+lightdm
+lightdm-gtk-greeter
+lightdm-gtk-greeter-settings
+
+# Themes & Appearance
+arc-gtk-theme
+papirus-icon-theme
+kvantum
+qt5ct
+qt6ct
+
+# Applications
+firefox
+thunderbird
+vlc
+gimp
+libreoffice-fresh
+transmission-gtk
+evince
+galculator
+mousepad
+ristretto
+xfburn
+catfish
+parole
+
+# System tools
+gparted
+timeshift
+gnome-disk-utility
+baobab
+gufw

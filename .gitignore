@@ -1,0 +1,5 @@
+out/
+work/
+*.iso
+*.sha256
+/tmp/

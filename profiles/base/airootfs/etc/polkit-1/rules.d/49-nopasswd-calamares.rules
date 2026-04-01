@@ -1,0 +1,12 @@
+/* Allow liveuser to run Calamares without password */
+polkit.addRule(function(action, subject) {
+    if (subject.isInGroup("wheel") && (
+        action.id == "com.github.calamares.calamares.helper" ||
+        action.id == "org.freedesktop.udisks2.filesystem-mount" ||
+        action.id == "org.freedesktop.udisks2.filesystem-mount-system" ||
+        action.id == "org.freedesktop.udisks2.encrypted-unlock" ||
+        action.id == "org.freedesktop.udisks2.eject-media"
+    )) {
+        return polkit.Result.YES;
+    }
+});

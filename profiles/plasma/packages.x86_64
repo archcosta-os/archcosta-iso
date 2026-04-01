@@ -1,0 +1,56 @@
+# ArchCosta Plasma Edition Packages
+
+# KDE Plasma Desktop
+plasma-meta
+plasma-wayland-session
+kde-utilities-meta
+kde-system-meta
+
+# Core KDE Applications
+dolphin
+dolphin-plugins
+konsole
+kate
+ark
+spectacle
+gwenview
+okular
+kcalc
+kcolorchooser
+kcharselect
+filelight
+partitionmanager
+ksystemlog
+kinfocenter
+kwalletmanager
+plasma-systemmonitor
+
+# Display Manager — SDDM (Plasma Edition)
+sddm
+sddm-kcm
+
+# Themes & Appearance
+kvantum
+papirus-icon-theme
+breeze-gtk
+
+# Applications
+firefox
+thunderbird
+vlc
+gimp
+libreoffice-fresh
+transmission-qt
+elisa
+
+# System tools
+gparted
+timeshift
+gnome-disk-utility
+baobab
+
+# KDE Integration
+kde-gtk-config
+xdg-desktop-portal-kde
+phonon-qt6-vlc
+packagekit-qt6

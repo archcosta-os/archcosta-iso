@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# ArchCosta Installer Launcher
+# Starts Calamares with proper privileges
+
+if [[ $EUID -ne 0 ]]; then
+    pkexec calamares "$@"
+else
+    calamares "$@"
+fi

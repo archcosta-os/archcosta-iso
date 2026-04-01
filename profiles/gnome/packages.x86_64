@@ -1,0 +1,50 @@
+# ArchCosta GNOME Edition Packages
+
+# GNOME Desktop
+gnome
+gnome-extra
+gnome-tweaks
+gnome-shell-extensions
+gnome-browser-connector
+
+# Display Manager — GDM (GNOME Edition)
+gdm
+
+# GNOME Extensions (from AUR via archcosta-pkgbuild)
+# gnome-shell-extension-appindicator
+# gnome-shell-extension-dash-to-dock
+# gnome-shell-extension-blur-my-shell
+
+# Themes & Appearance
+papirus-icon-theme
+kvantum
+qt5ct
+qt6ct
+
+# Applications
+firefox
+thunderbird
+vlc
+gimp
+libreoffice-fresh
+transmission-gtk
+evince
+gnome-calculator
+gnome-text-editor
+gnome-calendar
+gnome-clocks
+gnome-weather
+gnome-photos
+gnome-music
+gnome-maps
+gnome-contacts
+
+# System tools
+gparted
+timeshift
+gnome-disk-utility
+baobab
+dconf-editor
+
+# GNOME Integration
+xdg-desktop-portal-gnome
