@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Install ArchCosta
+Comment=Launch the ArchCosta OS installer
+Exec=/usr/local/bin/archcosta-install
+Icon=calamares
+Terminal=false
+Categories=System;
+StartupNotify=true
