@@ -37,11 +37,17 @@ ArchCosta ISO Builder v${VERSION}
 
 Usage: $(basename "$0") <edition> [options]
 
-Editions:
+Desktop Editions:
     xfce        XFCE desktop with LightDM
     plasma      KDE Plasma desktop with SDDM
     gnome       GNOME desktop with GDM
     cinnamon    Cinnamon desktop with LightDM
+
+Window Manager Editions:
+    i3          i3 tiling WM with LightDM
+    hyprland    Hyprland Wayland compositor with SDDM
+    sway        Sway Wayland compositor with SDDM
+    bspwm       bspwm tiling WM with LightDM
 
 Options:
     --work-dir <path>   Working directory (default: /tmp/archcosta-build)
@@ -79,7 +85,7 @@ check_dependencies() {
 }
 
 validate_edition() {
-    local valid_editions=(xfce plasma gnome cinnamon)
+    local valid_editions=(xfce plasma gnome cinnamon i3 hyprland sway bspwm)
     for e in "${valid_editions[@]}"; do
         [[ "$EDITION" == "$e" ]] && return 0
     done
@@ -159,7 +165,7 @@ cleanup() {
 # Parse arguments
 while [[ $# -gt 0 ]]; do
     case "$1" in
-        xfce|plasma|gnome|cinnamon)
+        xfce|plasma|gnome|cinnamon|i3|hyprland|sway|bspwm)
             EDITION="$1"
             shift
             ;;

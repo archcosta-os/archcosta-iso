@@ -1,0 +1,64 @@
+# ArchCosta bspwm Edition Packages
+
+# bspwm Window Manager
+bspwm
+sxhkd
+
+# Display Manager — LightDM (bspwm Edition)
+lightdm
+lightdm-gtk-greeter
+lightdm-gtk-greeter-settings
+
+# Bar
+polybar
+
+# Launcher & Notifications
+rofi
+dunst
+libnotify
+
+# Compositor
+picom
+
+# Wallpaper
+nitrogen
+feh
+
+# Screenshot
+flameshot
+maim
+
+# Themes & Appearance
+arc-gtk-theme
+papirus-icon-theme
+lxappearance
+qt5ct
+qt6ct
+
+# System Tray
+pasystray
+
+# Applications
+firefox
+mousepad
+ristretto
+vlc
+evince
+galculator
+
+# Utilities
+brightnessctl
+playerctl
+xss-lock
+xautolock
+arandr
+xclip
+xdotool
+polkit-gnome
+xdg-desktop-portal-gtk
+
+# System tools
+gparted
+timeshift
+gnome-disk-utility
+baobab

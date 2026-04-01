@@ -1,0 +1,55 @@
+# ArchCosta Hyprland Edition Packages
+
+# Hyprland Compositor
+hyprland
+hyprpaper
+hypridle
+hyprlock
+xdg-desktop-portal-hyprland
+
+# Display Manager — SDDM (Hyprland Edition)
+sddm
+sddm-kcm
+
+# Launcher & Notifications
+wofi
+mako
+libnotify
+
+# Bar
+waybar
+
+# Screenshot
+grim
+slurp
+swappy
+
+# Clipboard
+wl-clipboard
+cliphist
+
+# Themes & Appearance
+papirus-icon-theme
+nwg-look
+qt5ct
+qt6ct
+
+# Applications
+firefox
+mousepad
+vlc
+evince
+galculator
+
+# Wayland utilities
+wlr-randr
+brightnessctl
+playerctl
+polkit-gnome
+xdg-desktop-portal-gtk
+
+# System tools
+gparted
+timeshift
+gnome-disk-utility
+baobab

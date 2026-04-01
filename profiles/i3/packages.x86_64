@@ -1,0 +1,66 @@
+# ArchCosta i3 Edition Packages
+
+# i3 Window Manager
+i3-wm
+i3status
+i3lock
+i3blocks
+
+# Display Manager — LightDM (i3 Edition)
+lightdm
+lightdm-gtk-greeter
+lightdm-gtk-greeter-settings
+
+# Launcher & Notifications
+rofi
+dunst
+libnotify
+
+# Compositor
+picom
+
+# Wallpaper
+nitrogen
+feh
+
+# Bar (alternative)
+polybar
+
+# Screenshot
+flameshot
+maim
+
+# Themes & Appearance
+arc-gtk-theme
+papirus-icon-theme
+lxappearance
+qt5ct
+qt6ct
+
+# System Tray
+pasystray
+
+# Applications
+firefox
+mousepad
+ristretto
+vlc
+evince
+galculator
+
+# Utilities
+brightnessctl
+playerctl
+xss-lock
+xautolock
+arandr
+autorandr
+xclip
+xdotool
+xdg-desktop-portal-gtk
+
+# System tools
+gparted
+timeshift
+gnome-disk-utility
+baobab

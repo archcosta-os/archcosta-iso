@@ -1,0 +1,87 @@
+name: Validate Profiles
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    name: Profile Validation
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate all edition profiles
+        run: ./scripts/validate-profiles.sh
+
+      - name: Check for shellcheck issues
+        run: |
+          sudo apt-get install -y shellcheck
+          shellcheck build.sh scripts/*.sh || true
+
+      - name: Verify package lists are sorted and unique
+        run: |
+          errors=0
+          for pkg_file in profiles/*/packages.x86_64 profiles/base/packages.x86_64; do
+            if [[ ! -f "$pkg_file" ]]; then continue; fi
+            stripped=$(grep -v '^#\|^$' "$pkg_file")
+            dupes=$(echo "$stripped" | sort | uniq -d)
+            if [[ -n "$dupes" ]]; then
+              echo "::warning file=${pkg_file}::Duplicate packages found: ${dupes}"
+              ((errors++))
+            fi
+          done
+          if [[ $errors -gt 0 ]]; then
+            echo "::warning::Found duplicate packages in $errors file(s)"
+          fi
+
+  build-matrix:
+    runs-on: ubuntu-latest
+    name: Verify Build Config (${{ matrix.edition }})
+    strategy:
+      matrix:
+        edition: [xfce, plasma, gnome, cinnamon, i3, hyprland, sway, bspwm]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verify edition profile structure
+        run: |
+          edition="${{ matrix.edition }}"
+          echo "Checking profile: ${edition}"
+
+          # Must have packages file
+          if [[ ! -f "profiles/${edition}/packages.x86_64" ]]; then
+            echo "::error::Missing packages.x86_64 for ${edition}"
+            exit 1
+          fi
+
+          # Must have customize script
+          if [[ ! -f "profiles/${edition}/airootfs/root/customize_airootfs_edition.sh" ]]; then
+            echo "::warning::Missing customize_airootfs_edition.sh for ${edition}"
+          fi
+
+          # Must have exactly one DM enabled
+          pkg_file="profiles/${edition}/packages.x86_64"
+          dm_count=0
+          for dm in lightdm sddm gdm; do
+            if grep -q "^${dm}$" "$pkg_file"; then
+              ((dm_count++))
+              echo "Display manager: ${dm}"
+            fi
+          done
+
+          if [[ $dm_count -eq 0 ]]; then
+            echo "::error::No display manager found in ${edition} packages"
+            exit 1
+          elif [[ $dm_count -gt 1 ]]; then
+            echo "::error::Multiple display managers found in ${edition} packages"
+            exit 1
+          fi
+
+          echo "Profile ${edition}: OK"
