@@ -13,7 +13,7 @@ bootmodes=('bios.syslinux'
 arch="x86_64"
 pacman_conf="pacman.conf"
 airootfs_image_type="squashfs"
-airootfs_image_tool_options=('-comp' 'zstd' '-Xcompression-level' '15' '-b' '1M')
+airootfs_image_tool_options=('-comp' 'xz' '-Xbcj' 'x86' '-b' '1M' '-Xdict-size' '1M')
 file_permissions=(
     ["/etc/shadow"]="0:0:400"
     ["/etc/gshadow"]="0:0:400"
@@ -21,4 +21,5 @@ file_permissions=(
     ["/root/customize_airootfs.sh"]="0:0:755"
     ["/root/customize_airootfs_edition.sh"]="0:0:755"
     ["/usr/local/bin/archcosta-install"]="0:0:755"
+    ["/usr/local/bin/archcosta-welcome"]="0:0:755"
 )

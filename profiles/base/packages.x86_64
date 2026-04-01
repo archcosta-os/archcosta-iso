@@ -8,6 +8,8 @@ linux-firmware
 mkinitcpio
 mkinitcpio-archiso
 mkinitcpio-nfs-utils
+amd-ucode
+intel-ucode
 
 # Boot
 grub
@@ -76,6 +78,7 @@ nano
 vim
 git
 ufw
+yad
 
 # Installer (built from archcosta-pkgbuild, hosted in custom repo)
 archcosta-calamares

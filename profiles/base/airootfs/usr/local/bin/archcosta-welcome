@@ -1,0 +1,93 @@
+#!/usr/bin/env bash
+#
+# ArchCosta Welcome — Simple welcome dialog for the live session
+# Uses yad if available, falls back to zenity, then terminal
+#
+
+TITLE="Welcome to ArchCosta OS"
+ICON="archcosta"
+
+# Detect available dialog tool
+if command -v yad &>/dev/null; then
+    DIALOG="yad"
+elif command -v zenity &>/dev/null; then
+    DIALOG="zenity"
+else
+    DIALOG="terminal"
+fi
+
+show_terminal() {
+    echo ""
+    echo "  ╔══════════════════════════════════════╗"
+    echo "  ║     Welcome to ArchCosta OS          ║"
+    echo "  ╠══════════════════════════════════════╣"
+    echo "  ║                                      ║"
+    echo "  ║  1) Install ArchCosta OS             ║"
+    echo "  ║  2) Open File Manager                ║"
+    echo "  ║  3) Open Terminal                    ║"
+    echo "  ║  4) Open Web Browser                 ║"
+    echo "  ║  5) Partition Manager (GParted)       ║"
+    echo "  ║  6) Visit GitHub                     ║"
+    echo "  ║  q) Close                            ║"
+    echo "  ║                                      ║"
+    echo "  ╚══════════════════════════════════════╝"
+    echo ""
+    while true; do
+        read -rp "  Select [1-6/q]: " choice
+        case "$choice" in
+            1) archcosta-install & ;;
+            2) xdg-open "$HOME" & ;;
+            3) return ;;
+            4) xdg-open "https://github.com/archcosta-os" & ;;
+            5) pkexec gparted & ;;
+            6) xdg-open "https://github.com/archcosta-os" & ;;
+            q|Q) exit 0 ;;
+        esac
+    done
+}
+
+show_yad() {
+    yad --title="$TITLE" \
+        --window-icon="$ICON" \
+        --width=520 --height=420 \
+        --center \
+        --no-buttons \
+        --form \
+        --separator="" \
+        --columns=1 \
+        --text="\n<b><big>Welcome to ArchCosta OS</big></b>\n\nA lightweight, customizable Arch-based distribution.\nExplore the live session or install to your machine.\n" \
+        --field="  Install ArchCosta OS!btn:bash -c 'archcosta-install &'" "" \
+        --field="  Partition Manager (GParted)!btn:bash -c 'pkexec gparted &'" "" \
+        --field="  Open File Manager!btn:bash -c 'xdg-open \$HOME &'" "" \
+        --field="  Open Web Browser!btn:bash -c 'xdg-open https://github.com/archcosta-os &'" "" \
+        --field="  Open Terminal!btn:bash -c 'xdg-open terminal &'" "" \
+        2>/dev/null
+}
+
+show_zenity() {
+    choice=$(zenity --list \
+        --title="$TITLE" \
+        --width=450 --height=380 \
+        --text="Welcome to ArchCosta OS\n\nA lightweight, customizable Arch-based distribution." \
+        --column="Action" --column="Description" \
+        "install"   "Install ArchCosta OS" \
+        "gparted"   "Partition Manager (GParted)" \
+        "files"     "Open File Manager" \
+        "browser"   "Open Web Browser" \
+        "github"    "Visit GitHub" \
+        2>/dev/null)
+
+    case "$choice" in
+        install) archcosta-install & ;;
+        gparted) pkexec gparted & ;;
+        files)   xdg-open "$HOME" & ;;
+        browser) xdg-open "https://github.com/archcosta-os" & ;;
+        github)  xdg-open "https://github.com/archcosta-os" & ;;
+    esac
+}
+
+case "$DIALOG" in
+    yad)      show_yad ;;
+    zenity)   show_zenity ;;
+    terminal) show_terminal ;;
+esac

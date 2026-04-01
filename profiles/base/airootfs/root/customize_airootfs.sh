@@ -46,6 +46,11 @@ pacman-key --populate archlinux
 # Set default shell for new users to zsh
 sed -i 's|/bin/bash|/bin/zsh|' /etc/default/useradd
 
+# Clean up to reduce ISO size
+rm -rf /var/cache/pacman/pkg/*
+rm -f /var/log/pacman.log
+rm -rf /var/lib/pacman/sync/*
+
 # Run edition-specific customization if present
 if [[ -x /root/customize_airootfs_edition.sh ]]; then
     /root/customize_airootfs_edition.sh

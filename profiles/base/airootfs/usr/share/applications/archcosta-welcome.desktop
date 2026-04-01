@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=ArchCosta Welcome
+GenericName=Welcome App
+Comment=Welcome to ArchCosta OS — Install or explore the live session
+Exec=archcosta-welcome
+Icon=archcosta
+Terminal=false
+Categories=System;
+Keywords=welcome;install;archcosta;
+StartupNotify=false
