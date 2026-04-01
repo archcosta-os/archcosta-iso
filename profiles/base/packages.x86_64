@@ -96,14 +96,13 @@ gvfs-nfs
 gvfs-smb
 tumbler
 file-roller
-p7zip
+7zip
 unzip
 unrar
 
 # System tools
 htop
 btop
-neofetch
 fastfetch
 reflector
 pacman-contrib
@@ -121,7 +120,6 @@ firewalld
 
 # Installer
 calamares
-calamares-oem
 
 # Hardware
 xdg-utils
@@ -136,6 +134,13 @@ smartmontools
 
 # Plymouth
 plymouth
+
+# Virtual machine guest support
+open-vm-tools
+virtualbox-guest-utils
+qemu-guest-agent
+spice-vdagent
+xf86-video-qxl
 
 # Printing
 cups

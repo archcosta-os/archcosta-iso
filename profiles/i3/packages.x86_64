@@ -20,7 +20,6 @@ libnotify
 picom
 
 # Wallpaper
-nitrogen
 feh
 
 # Bar (alternative)
@@ -31,8 +30,8 @@ flameshot
 maim
 
 # Themes & Appearance
-arc-gtk-theme
 papirus-icon-theme
+adwaita-icon-theme
 lxappearance
 qt5ct
 qt6ct
@@ -52,7 +51,6 @@ galculator
 brightnessctl
 playerctl
 xss-lock
-xautolock
 arandr
 autorandr
 xclip

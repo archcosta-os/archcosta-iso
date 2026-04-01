@@ -19,8 +19,8 @@ lightdm-gtk-greeter
 lightdm-gtk-greeter-settings
 
 # Themes & Appearance
-arc-gtk-theme
 papirus-icon-theme
+adwaita-icon-theme
 kvantum
 qt5ct
 qt6ct

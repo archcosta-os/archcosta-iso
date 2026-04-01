@@ -5,27 +5,21 @@ cinnamon
 cinnamon-translations
 nemo
 nemo-fileroller
-nemo-preview
 nemo-share
 xed
 xreader
-xviewer
-pix
 gnome-terminal
 
 # Display Manager — LightDM (Cinnamon Edition)
 lightdm
 lightdm-slick-greeter
-lightdm-settings
 
 # Themes & Appearance
-arc-gtk-theme
 papirus-icon-theme
+adwaita-icon-theme
 kvantum
 qt5ct
 qt6ct
-mint-themes
-mint-y-icons
 
 # Applications
 firefox
@@ -52,4 +46,3 @@ gufw
 xdg-desktop-portal-xapp
 cinnamon-control-center
 cinnamon-screensaver
-blueberry

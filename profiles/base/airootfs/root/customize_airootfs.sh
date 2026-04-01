@@ -32,6 +32,15 @@ systemctl enable fstrim.timer
 systemctl enable reflector.timer
 systemctl enable acpid.service
 
+# Virtual machine guest services
+# These units have ConditionVirtualization= guards so they only
+# activate inside the matching hypervisor.
+systemctl enable vmtoolsd.service
+systemctl enable vmware-vmblock-fuse.service
+systemctl enable vboxservice.service
+systemctl enable qemu-guest-agent.service
+systemctl enable spice-vdagentd.service
+
 # Pacman setup
 pacman-key --init
 pacman-key --populate archlinux
