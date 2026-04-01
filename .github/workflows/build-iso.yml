@@ -56,7 +56,7 @@ jobs:
           pacman -Syu --noconfirm
           pacman -S --noconfirm --needed \
             archiso git base-devel squashfs-tools dosfstools xorriso \
-            mtools erofs-utils grub
+            mtools erofs-utils
 
       - name: Checkout
         uses: actions/checkout@v4
