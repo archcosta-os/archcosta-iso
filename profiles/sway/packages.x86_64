@@ -7,7 +7,7 @@ swaylock
 swaybg
 xdg-desktop-portal-wlr
 
-# Display Manager — SDDM (Sway Edition)
+# Display Manager
 sddm
 
 # Launcher & Notifications
@@ -17,7 +17,6 @@ libnotify
 
 # Bar
 waybar
-i3status-rust
 
 # Terminal
 foot
@@ -25,7 +24,6 @@ foot
 # Screenshot
 grim
 slurp
-swappy
 
 # Clipboard
 wl-clipboard
@@ -34,8 +32,6 @@ cliphist
 # Themes & Appearance
 papirus-icon-theme
 nwg-look
-qt5ct
-qt6ct
 
 # Applications
 firefox
@@ -45,7 +41,6 @@ evince
 galculator
 
 # Wayland utilities
-wlr-randr
 brightnessctl
 playerctl
 polkit-gnome
@@ -53,6 +48,4 @@ xdg-desktop-portal-gtk
 
 # System tools
 gparted
-timeshift
 gnome-disk-utility
-baobab

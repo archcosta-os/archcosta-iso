@@ -7,9 +7,8 @@ hypridle
 hyprlock
 xdg-desktop-portal-hyprland
 
-# Display Manager — SDDM (Hyprland Edition)
+# Display Manager
 sddm
-sddm-kcm
 
 # Launcher & Notifications
 wofi
@@ -22,7 +21,6 @@ waybar
 # Screenshot
 grim
 slurp
-swappy
 
 # Clipboard
 wl-clipboard
@@ -31,8 +29,9 @@ cliphist
 # Themes & Appearance
 papirus-icon-theme
 nwg-look
-qt5ct
-qt6ct
+
+# Terminal
+alacritty
 
 # Applications
 firefox
@@ -42,7 +41,6 @@ evince
 galculator
 
 # Wayland utilities
-wlr-randr
 brightnessctl
 playerctl
 polkit-gnome
@@ -50,6 +48,4 @@ xdg-desktop-portal-gtk
 
 # System tools
 gparted
-timeshift
 gnome-disk-utility
-baobab

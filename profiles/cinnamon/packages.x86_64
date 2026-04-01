@@ -2,45 +2,30 @@
 
 # Cinnamon Desktop
 cinnamon
-cinnamon-translations
 nemo
 nemo-fileroller
-nemo-share
 xed
 xreader
 gnome-terminal
 
-# Display Manager — LightDM (Cinnamon Edition)
+# Display Manager
 lightdm
 lightdm-slick-greeter
 
 # Themes & Appearance
 papirus-icon-theme
 adwaita-icon-theme
-kvantum
-qt5ct
-qt6ct
 
 # Applications
 firefox
-thunderbird
 vlc
-gimp
-libreoffice-fresh
-transmission-gtk
 evince
 gnome-calculator
 gnome-screenshot
-gnome-system-monitor
-drawing
-celluloid
 
 # System tools
 gparted
-timeshift
 gnome-disk-utility
-baobab
-gufw
 
 # Cinnamon Integration
 xdg-desktop-portal-xapp

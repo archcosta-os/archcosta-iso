@@ -4,10 +4,9 @@
 bspwm
 sxhkd
 
-# Display Manager — LightDM (bspwm Edition)
+# Display Manager
 lightdm
 lightdm-gtk-greeter
-lightdm-gtk-greeter-settings
 
 # Bar
 polybar
@@ -25,38 +24,28 @@ feh
 
 # Screenshot
 flameshot
-maim
 
 # Themes & Appearance
 papirus-icon-theme
 adwaita-icon-theme
 lxappearance
-qt5ct
-qt6ct
-
-# System Tray
-pasystray
 
 # Applications
 firefox
 mousepad
-ristretto
 vlc
 evince
 galculator
+alacritty
 
 # Utilities
 brightnessctl
 playerctl
 xss-lock
-arandr
 xclip
-xdotool
 polkit-gnome
 xdg-desktop-portal-gtk
 
 # System tools
 gparted
-timeshift
 gnome-disk-utility
-baobab

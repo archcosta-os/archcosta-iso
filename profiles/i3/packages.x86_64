@@ -6,10 +6,9 @@ i3status
 i3lock
 i3blocks
 
-# Display Manager — LightDM (i3 Edition)
+# Display Manager
 lightdm
 lightdm-gtk-greeter
-lightdm-gtk-greeter-settings
 
 # Launcher & Notifications
 rofi
@@ -22,43 +21,34 @@ picom
 # Wallpaper
 feh
 
-# Bar (alternative)
+# Bar
 polybar
 
 # Screenshot
 flameshot
-maim
 
 # Themes & Appearance
 papirus-icon-theme
 adwaita-icon-theme
 lxappearance
-qt5ct
-qt6ct
-
-# System Tray
-pasystray
 
 # Applications
 firefox
 mousepad
-ristretto
 vlc
 evince
 galculator
+alacritty
 
 # Utilities
 brightnessctl
 playerctl
 xss-lock
 arandr
-autorandr
 xclip
-xdotool
+polkit-gnome
 xdg-desktop-portal-gtk
 
 # System tools
 gparted
-timeshift
 gnome-disk-utility
-baobab
