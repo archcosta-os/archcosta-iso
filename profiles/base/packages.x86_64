@@ -13,6 +13,7 @@ mkinitcpio-nfs-utils
 grub
 efibootmgr
 os-prober
+syslinux
 
 # Filesystem
 btrfs-progs

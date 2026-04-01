@@ -50,3 +50,9 @@ pkgfile --update || true
 
 # Set default shell for new users to zsh
 sed -i 's|/bin/bash|/bin/zsh|' /etc/default/useradd
+
+# Run edition-specific customization if present
+if [[ -x /root/customize_airootfs_edition.sh ]]; then
+    /root/customize_airootfs_edition.sh
+    rm /root/customize_airootfs_edition.sh
+fi
