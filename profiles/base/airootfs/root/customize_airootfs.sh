@@ -26,8 +26,6 @@ chmod 440 /etc/sudoers.d/10-liveuser
 # Enable core services
 systemctl enable NetworkManager.service
 systemctl enable bluetooth.service
-systemctl enable cups.service
-systemctl enable firewalld.service
 systemctl enable fstrim.timer
 systemctl enable reflector.timer
 systemctl enable acpid.service
@@ -44,9 +42,6 @@ systemctl enable spice-vdagentd.service
 # Pacman setup
 pacman-key --init
 pacman-key --populate archlinux
-
-# Update pkgfile database
-pkgfile --update || true
 
 # Set default shell for new users to zsh
 sed -i 's|/bin/bash|/bin/zsh|' /etc/default/useradd
