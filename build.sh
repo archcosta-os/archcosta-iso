@@ -70,7 +70,7 @@ check_root() {
 }
 
 check_dependencies() {
-    local deps=(archiso mksquashfs mkfs.fat xorriso)
+    local deps=(mkarchiso mksquashfs mkfs.fat xorriso)
     local missing=()
 
     for dep in "${deps[@]}"; do
