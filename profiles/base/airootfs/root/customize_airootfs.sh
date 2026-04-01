@@ -13,8 +13,9 @@ locale-gen
 # Timezone
 ln -sf /usr/share/zoneinfo/UTC /etc/localtime
 
-# Create live user
-useradd -m -G wheel,storage,power,video,audio,network,lp,scanner -s /bin/zsh liveuser
+# Create autologin group and live user
+groupadd -r autologin
+useradd -m -G wheel,storage,power,video,audio,network,lp,scanner,autologin -s /bin/zsh liveuser
 echo "liveuser:" | chpasswd -e
 echo "root:" | chpasswd -e
 
