@@ -1,0 +1,147 @@
+name: Build ISO
+
+on:
+  workflow_dispatch:
+    inputs:
+      edition:
+        description: "Edition to build"
+        required: true
+        type: choice
+        options:
+          - all-de
+          - all-wm
+          - all
+          - xfce
+          - plasma
+          - gnome
+          - cinnamon
+          - i3
+          - hyprland
+          - sway
+          - bspwm
+
+permissions:
+  contents: write
+
+jobs:
+  resolve-matrix:
+    runs-on: ubuntu-latest
+    outputs:
+      editions: ${{ steps.set.outputs.editions }}
+    steps:
+      - id: set
+        run: |
+          case "${{ inputs.edition }}" in
+            all-de)  echo 'editions=["xfce","plasma","gnome","cinnamon"]' >> "$GITHUB_OUTPUT" ;;
+            all-wm)  echo 'editions=["i3","hyprland","sway","bspwm"]' >> "$GITHUB_OUTPUT" ;;
+            all)     echo 'editions=["xfce","plasma","gnome","cinnamon","i3","hyprland","sway","bspwm"]' >> "$GITHUB_OUTPUT" ;;
+            *)       echo 'editions=["${{ inputs.edition }}"]' >> "$GITHUB_OUTPUT" ;;
+          esac
+
+  build:
+    needs: resolve-matrix
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        edition: ${{ fromJson(needs.resolve-matrix.outputs.editions) }}
+    name: Build ${{ matrix.edition }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Free disk space
+        run: |
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache
+          sudo apt-get clean
+          df -h /
+
+      - name: Install archiso dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y arch-install-scripts squashfs-tools dosfstools xorriso \
+            mtools erofs-utils grub-pc-bin grub-efi-amd64-bin
+
+      - name: Set up pacman (bootstrap Arch keyring)
+        run: |
+          # Download and bootstrap a minimal Arch chroot with archiso
+          sudo mkdir -p /tmp/archiso-pkg
+          ARCH_MIRROR="https://geo.mirror.pkgbuild.com"
+
+          # Grab archiso package
+          ARCHISO_PKG=$(curl -sL "$ARCH_MIRROR/extra/os/x86_64/" | \
+            grep -oP 'archiso-[0-9]+[^"]*-x86_64\.pkg\.tar\.zst' | tail -1)
+          sudo curl -L -o /tmp/archiso-pkg/archiso.pkg.tar.zst \
+            "$ARCH_MIRROR/extra/os/x86_64/$ARCHISO_PKG"
+
+          echo "Downloaded: $ARCHISO_PKG"
+
+      - name: Build ISO
+        run: |
+          edition="${{ matrix.edition }}"
+          echo "::group::Building ArchCosta ${edition} edition"
+
+          sudo chmod +x build.sh
+          sudo ./build.sh "$edition" \
+            --work-dir /tmp/archcosta-build \
+            --out-dir "${{ github.workspace }}/out"
+
+          echo "::endgroup::"
+
+      - name: Generate checksums
+        run: |
+          cd "${{ github.workspace }}/out"
+          for iso in *.iso; do
+            sha256sum "$iso" > "${iso}.sha256"
+            echo "### $iso" >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+            cat "${iso}.sha256" >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+          done
+
+      - name: Upload ISO artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: archcosta-${{ matrix.edition }}-iso
+          path: |
+            out/*.iso
+            out/*.sha256
+          retention-days: 7
+          compression-level: 0
+
+  release:
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    name: Create Release
+
+    steps:
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+          merge-multiple: true
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: build-${{ github.run_number }}
+          name: "ArchCosta Build #${{ github.run_number }}"
+          body: |
+            ## ArchCosta ISO Build
+
+            **Edition(s):** `${{ inputs.edition }}`
+            **Triggered by:** @${{ github.actor }}
+            **Commit:** ${{ github.sha }}
+
+            ### Downloads
+            Download the ISO for your edition and verify with the `.sha256` checksum file.
+
+            ### Verify
+            ```bash
+            sha256sum -c archcosta-<edition>-*.iso.sha256
+            ```
+          files: artifacts/**/*
+          draft: false
+          prerelease: true
