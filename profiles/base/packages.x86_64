@@ -118,8 +118,8 @@ tlp
 ufw
 firewalld
 
-# Installer
-calamares
+# Installer (built from archcosta-pkgbuild, hosted in custom repo)
+archcosta-calamares
 
 # Hardware
 xdg-utils
