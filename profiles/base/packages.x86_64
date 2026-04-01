@@ -152,4 +152,3 @@ arch-install-scripts
 memtest86+
 nbd
 squashfs-tools
-syslinux
