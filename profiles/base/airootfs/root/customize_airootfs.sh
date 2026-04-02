@@ -16,8 +16,8 @@ ln -sf /usr/share/zoneinfo/UTC /etc/localtime
 # Create autologin group and live user
 groupadd -r autologin
 useradd -m -G wheel,storage,power,video,audio,network,lp,scanner,autologin -s /bin/zsh liveuser
-echo "liveuser:" | chpasswd -e
-echo "root:" | chpasswd -e
+echo "liveuser:liveuser" | chpasswd
+echo "root:root" | chpasswd
 
 # Passwordless sudo for live user
 install -dm755 /etc/sudoers.d
