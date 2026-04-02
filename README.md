@@ -22,6 +22,15 @@ Build system for ArchCosta OS live/installable ISO images. Based on [archiso](ht
 | Sway | Sway (Wayland) | SDDM | Stable |
 | bspwm | bspwm (X11) | LightDM (GTK Greeter) | Stable |
 
+## Live Session Credentials
+
+| User | Password |
+|------|----------|
+| `liveuser` | `liveuser` |
+| `root` | `root` |
+
+> These credentials are for the **live ISO session only**. The installed system sets its own passwords via Calamares.
+
 ## Requirements
 
 ```bash
