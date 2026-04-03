@@ -53,6 +53,11 @@ echo "SKIP_ZSH_NEWUSER_INSTALL=1" >> /etc/environment
 # Copy skel files to root home (for root user)
 cp -r /etc/skel/ /root/
 
+# Enable Plymouth boot splash
+if command -v plymouth-set-default-theme &>/dev/null; then
+    plymouth-set-default-theme archcosta 2>/dev/null || true
+fi
+
 # Clean up to reduce ISO size
 rm -rf /var/cache/pacman/pkg/*
 rm -f /var/log/pacman.log

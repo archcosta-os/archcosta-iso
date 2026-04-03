@@ -16,6 +16,7 @@ grub
 efibootmgr
 os-prober
 syslinux
+plymouth
 
 # Filesystem
 btrfs-progs
