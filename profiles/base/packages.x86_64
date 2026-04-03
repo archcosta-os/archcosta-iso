@@ -17,6 +17,7 @@ efibootmgr
 os-prober
 syslinux
 plymouth
+archcosta-branding
 
 # Filesystem
 btrfs-progs
