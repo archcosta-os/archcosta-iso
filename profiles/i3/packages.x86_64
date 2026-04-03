@@ -9,6 +9,9 @@ i3blocks
 # Display Manager
 sddm
 
+# File manager
+thunar
+
 # Launcher & Notifications
 rofi
 dunst
@@ -26,6 +29,23 @@ polybar
 # Screenshot
 flameshot
 
+# Terminal
+alacritty
+kitty
+
+# Audio
+pipewire
+pipewire-alsa
+pipewire-pulse
+wireplumber
+
+# Auth agent
+polkit-gnome
+
+# Fonts
+ttf-dejavu
+noto-fonts
+
 # Themes & Appearance
 papirus-icon-theme
 adwaita-icon-theme
@@ -37,7 +57,6 @@ mousepad
 vlc
 evince
 galculator
-alacritty
 
 # Utilities
 brightnessctl
@@ -45,8 +64,7 @@ playerctl
 xss-lock
 arandr
 xclip
-polkit-gnome
-xdg-desktop-portal-gtk
+xdg-user-dirs
 
 # System tools
 gparted

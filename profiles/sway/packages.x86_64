@@ -6,9 +6,15 @@ swayidle
 swaylock
 swaybg
 xdg-desktop-portal-wlr
+xdg-desktop-portal
 
 # Display Manager
 sddm
+
+# File manager
+dolphin
+kio
+kio-extras
 
 # Launcher & Notifications
 wofi
@@ -20,14 +26,32 @@ waybar
 
 # Terminal
 foot
+alacritty
+kitty
 
 # Screenshot
 grim
 slurp
+swappy
 
 # Clipboard
 wl-clipboard
 cliphist
+
+# Audio
+pipewire
+pipewire-alsa
+pipewire-pulse
+wireplumber
+
+# Auth agent
+polkit-kde-agent
+polkit-gnome
+
+# Fonts
+ttf-dejavu
+noto-fonts
+noto-fonts-emoji
 
 # Themes & Appearance
 papirus-icon-theme
@@ -35,16 +59,15 @@ nwg-look
 
 # Applications
 firefox
-mousepad
 vlc
 evince
 galculator
+mousepad
 
 # Wayland utilities
+xdg-user-dirs
 brightnessctl
 playerctl
-polkit-gnome
-xdg-desktop-portal-gtk
 
 # System tools
 gparted

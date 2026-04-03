@@ -1,0 +1,36 @@
+# ArchCosta Mako Notification Configuration
+
+# General
+max-visible=5
+sort=-time
+layer=overlay
+anchor=top-right
+default-timeout=5000
+
+# Appearance
+font=Noto Sans 10
+width=350
+height=120
+margin=10
+padding=14
+border-size=2
+border-radius=8
+border-color=#00b4d8
+background-color=#1a1a2eee
+text-color=#e0e0e0
+icon-path=/usr/share/icons/Papirus-Dark
+max-icon-size=48
+
+# Urgency overrides
+[urgency=low]
+border-color=#22b8cf
+default-timeout=3000
+
+[urgency=normal]
+border-color=#00b4d8
+default-timeout=5000
+
+[urgency=critical]
+border-color=#ff6b6b
+background-color=#1a1a2eff
+default-timeout=0

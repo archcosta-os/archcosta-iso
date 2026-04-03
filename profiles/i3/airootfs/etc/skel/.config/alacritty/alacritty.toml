@@ -1,0 +1,145 @@
+# ArchCosta Alacritty Configuration
+
+[env]
+TERM = "xterm-256color"
+
+[window]
+padding = { x = 8, y = 8 }
+dynamic_padding = true
+decorations = "None"
+opacity = 0.92
+blur = false
+startup_mode = "Windowed"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[font]
+size = 10.0
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+style = "Italic"
+
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font"
+style = "Bold Italic"
+
+[font.offset]
+x = 0
+y = 1
+
+[cursor]
+unfocused_hollow = true
+
+[cursor.style]
+shape = "Block"
+blinking = "On"
+
+[cursor.vi_mode_style]
+shape = "Beam"
+
+[mouse]
+hide_when_typing = true
+
+# ArchCosta Color Scheme
+[colors.primary]
+background = "#1a1a2e"
+foreground = "#e0e0e0"
+dim_foreground = "#888888"
+bright_foreground = "#ffffff"
+
+[colors.cursor]
+text = "#1a1a2e"
+cursor = "#00b4d8"
+
+[colors.vi_mode_cursor]
+text = "#1a1a2e"
+cursor = "#22b8cf"
+
+[colors.search.matches]
+foreground = "#1a1a2e"
+background = "#22b8cf"
+
+[colors.search.focused_match]
+foreground = "#1a1a2e"
+background = "#00b4d8"
+
+[colors.hints.start]
+foreground = "#1a1a2e"
+background = "#00b4d8"
+
+[colors.hints.end]
+foreground = "#1a1a2e"
+background = "#22b8cf"
+
+[colors.selection]
+text = "#ffffff"
+background = "#00b4d8"
+
+# Normal colors
+[colors.normal]
+black   = "#1a1a2e"
+red     = "#e06c75"
+green   = "#98c379"
+yellow  = "#e5c07b"
+blue    = "#00b4d8"
+magenta = "#c678dd"
+cyan    = "#22b8cf"
+white   = "#e0e0e0"
+
+# Bright colors
+[colors.bright]
+black   = "#555555"
+red     = "#e88990"
+green   = "#b5d89e"
+yellow  = "#ecd3a0"
+blue    = "#33c6e5"
+magenta = "#d9a0e8"
+cyan    = "#55d4e5"
+white   = "#ffffff"
+
+# Dim colors
+[colors.dim]
+black   = "#111122"
+red     = "#a34f56"
+green   = "#6d8f59"
+yellow  = "#a68c5a"
+blue    = "#00829d"
+magenta = "#8f5a9e"
+cyan    = "#198594"
+white   = "#999999"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "Key0"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Equals"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "Minus"
+mods = "Control"

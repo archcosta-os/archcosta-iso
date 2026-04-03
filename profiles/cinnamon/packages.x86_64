@@ -11,6 +11,16 @@ gnome-terminal
 # Display Manager
 sddm
 
+# Audio
+pipewire
+pipewire-alsa
+pipewire-pulse
+wireplumber
+
+# Fonts
+ttf-dejavu
+noto-fonts
+
 # Themes & Appearance
 papirus-icon-theme
 adwaita-icon-theme

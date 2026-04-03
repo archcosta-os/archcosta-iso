@@ -1,0 +1,286 @@
+# ArchCosta i3 Configuration
+# https://github.com/archcosta/archcosta-i3
+
+# ---------------------------------------------------------------------------
+# Mod Key
+# ---------------------------------------------------------------------------
+set $mod Mod4
+
+# ---------------------------------------------------------------------------
+# Font
+# ---------------------------------------------------------------------------
+font pango:Noto Sans 10
+
+# ---------------------------------------------------------------------------
+# Colors (ArchCosta Palette)
+# ---------------------------------------------------------------------------
+# Class                 Border  Backgr. Text    Indicator Child_border
+client.focused          #00b4d8 #00b4d8 #ffffff #22b8cf   #00b4d8
+client.focused_inactive #1a1a2e #1a1a2e #e0e0e0 #1a1a2e   #1a1a2e
+client.unfocused        #1a1a2e #1a1a2e #888888 #1a1a2e   #1a1a2e
+client.urgent           #e06c75 #e06c75 #ffffff #e06c75   #e06c75
+client.placeholder      #1a1a2e #1a1a2e #e0e0e0 #1a1a2e   #1a1a2e
+client.background       #1a1a2e
+
+# ---------------------------------------------------------------------------
+# Gaps (i3-gaps)
+# ---------------------------------------------------------------------------
+gaps inner 8
+gaps outer 4
+smart_gaps on
+smart_borders on
+
+# ---------------------------------------------------------------------------
+# Window Borders
+# ---------------------------------------------------------------------------
+default_border pixel 2
+default_floating_border pixel 2
+
+# Use Mouse+$mod to drag floating windows
+floating_modifier $mod
+
+# ---------------------------------------------------------------------------
+# Workspace Names
+# ---------------------------------------------------------------------------
+set $ws1  "1"
+set $ws2  "2"
+set $ws3  "3"
+set $ws4  "4"
+set $ws5  "5"
+set $ws6  "6"
+set $ws7  "7"
+set $ws8  "8"
+set $ws9  "9"
+set $ws10 "10"
+
+# ---------------------------------------------------------------------------
+# Key Bindings — Applications
+# ---------------------------------------------------------------------------
+# Terminal
+bindsym $mod+Return exec alacritty
+
+# Application launcher
+bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons
+
+# File manager
+bindsym $mod+e exec thunar
+
+# Web browser
+bindsym $mod+b exec firefox
+
+# ---------------------------------------------------------------------------
+# Key Bindings — Window Management
+# ---------------------------------------------------------------------------
+# Kill focused window
+bindsym $mod+Shift+q kill
+
+# Change focus
+bindsym $mod+Left  focus left
+bindsym $mod+Down  focus down
+bindsym $mod+Up    focus up
+bindsym $mod+Right focus right
+
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+# Note: $mod+l is reserved for screen lock
+bindsym $mod+semicolon focus right
+
+# Move focused window
+bindsym $mod+Shift+Left  move left
+bindsym $mod+Shift+Down  move down
+bindsym $mod+Shift+Up    move up
+bindsym $mod+Shift+Right move right
+
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
+
+# Split orientation
+bindsym $mod+h split h
+bindsym $mod+v split v
+
+# Fullscreen
+bindsym $mod+f fullscreen toggle
+
+# Layout
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+t layout toggle split
+
+# Toggle floating
+bindsym $mod+Shift+space floating toggle
+
+# Focus floating / tiling
+bindsym $mod+space focus mode_toggle
+
+# Focus parent / child
+bindsym $mod+a focus parent
+bindsym $mod+c focus child
+
+# ---------------------------------------------------------------------------
+# Key Bindings — Workspaces
+# ---------------------------------------------------------------------------
+# Switch to workspace
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+# Move container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# ---------------------------------------------------------------------------
+# Key Bindings — Resize Mode
+# ---------------------------------------------------------------------------
+mode "resize" {
+    bindsym Left  resize shrink width  5 px or 5 ppt
+    bindsym Down  resize grow   height 5 px or 5 ppt
+    bindsym Up    resize shrink height 5 px or 5 ppt
+    bindsym Right resize grow   width  5 px or 5 ppt
+
+    bindsym j resize shrink width  5 px or 5 ppt
+    bindsym k resize grow   height 5 px or 5 ppt
+    bindsym i resize shrink height 5 px or 5 ppt
+    bindsym semicolon resize grow width 5 px or 5 ppt
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
+}
+bindsym $mod+r mode "resize"
+
+# ---------------------------------------------------------------------------
+# Key Bindings — System
+# ---------------------------------------------------------------------------
+# Reload i3 config
+bindsym $mod+Shift+c reload
+
+# Restart i3 in-place
+bindsym $mod+Shift+r restart
+
+# Exit i3 (legacy)
+# bindsym $mod+Shift+e exec "i3-nagbar ..."
+
+# ---------------------------------------------------------------------------
+# Power Menu Mode
+# ---------------------------------------------------------------------------
+set $mode_power [l]ock  [e]xit  [s]uspend  [r]eboot  [S]hutdown
+mode "$mode_power" {
+    bindsym l exec --no-startup-id i3lock -c 1a1a2e, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym s exec --no-startup-id systemctl suspend, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id systemctl poweroff, mode "default"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Shift+e mode "$mode_power"
+
+# Lock screen
+bindsym $mod+l exec --no-startup-id i3lock -c 1a1a2e
+
+# ---------------------------------------------------------------------------
+# Key Bindings — Screenshots
+# ---------------------------------------------------------------------------
+# Full screenshot
+bindsym Print exec --no-startup-id flameshot full -p ~/Pictures/Screenshots
+# Region screenshot
+bindsym $mod+Print exec --no-startup-id flameshot gui
+
+# ---------------------------------------------------------------------------
+# Key Bindings — Audio (PulseAudio / pactl)
+# ---------------------------------------------------------------------------
+set $refresh_i3status killall -SIGUSR1 i3status
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
+bindsym XF86AudioMute        exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute     exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+# ---------------------------------------------------------------------------
+# Key Bindings — Brightness
+# ---------------------------------------------------------------------------
+bindsym XF86MonBrightnessUp   exec --no-startup-id brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
+
+# ---------------------------------------------------------------------------
+# Scratchpad
+# ---------------------------------------------------------------------------
+bindsym $mod+minus scratchpad show
+bindsym $mod+Shift+minus move scratchpad
+
+# ---------------------------------------------------------------------------
+# Workspace Assignments
+# ---------------------------------------------------------------------------
+assign [class="firefox"]        $ws2
+assign [class="Thunar"]         $ws3
+assign [class="Code"]           $ws4
+assign [class="Gimp"]           $ws5
+
+# ---------------------------------------------------------------------------
+# Window Rules
+# ---------------------------------------------------------------------------
+for_window [window_role="pop-up"]      floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [class="Pavucontrol"]       floating enable
+for_window [class="Lxappearance"]      floating enable
+for_window [class="Nm-connection-editor"] floating enable
+for_window [class="Galculator"]        floating enable
+for_window [title="File Transfer*"]    floating enable
+for_window [class="Blueman-manager"]   floating enable
+for_window [class="Arandr"]            floating enable
+for_window [class="feh"]               floating enable
+for_window [window_type="dialog"]      floating enable
+for_window [window_type="splash"]      floating enable
+
+# ---------------------------------------------------------------------------
+# Bar (i3bar + i3status)
+# ---------------------------------------------------------------------------
+bar {
+    status_command i3status --config ~/.config/i3status/config
+    position top
+    tray_output primary
+    separator_symbol "|"
+    strip_workspace_numbers yes
+
+    colors {
+        background #1a1a2e
+        statusline #e0e0e0
+        separator  #00b4d8
+
+        # Class            Border  Backgr. Text
+        focused_workspace  #00b4d8 #00b4d8 #ffffff
+        active_workspace   #1a1a2e #1a1a2e #e0e0e0
+        inactive_workspace #1a1a2e #1a1a2e #888888
+        urgent_workspace   #e06c75 #e06c75 #ffffff
+        binding_mode       #00b4d8 #00b4d8 #ffffff
+    }
+}
+
+# ---------------------------------------------------------------------------
+# Autostart
+# ---------------------------------------------------------------------------
+exec --no-startup-id picom --config ~/.config/picom/picom.conf -b
+exec --no-startup-id feh --bg-fill /usr/share/archcosta/wallpapers/default.png
+exec --no-startup-id nm-applet
+exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -c 1a1a2e --nofork
+exec --no-startup-id xset s 300 300

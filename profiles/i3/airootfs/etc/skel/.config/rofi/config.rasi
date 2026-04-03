@@ -1,0 +1,115 @@
+/* ArchCosta Rofi Theme */
+
+configuration {
+    modi: "drun,run,window,filebrowser";
+    show-icons: true;
+    icon-theme: "Papirus-Dark";
+    terminal: "alacritty";
+    font: "Noto Sans 11";
+    display-drun: "Apps";
+    display-run: "Run";
+    display-window: "Windows";
+    display-filebrowser: "Files";
+    drun-display-format: "{name}";
+}
+
+* {
+    bg:       #1a1a2eee;
+    bg-alt:   #252545ff;
+    fg:       #e0e0e0ff;
+    fg-dim:   #888888ff;
+    accent:   #00b4d8ff;
+    teal:     #22b8cfff;
+    urgent:   #e06c75ff;
+
+    background-color: transparent;
+    text-color:       @fg;
+    margin:  0;
+    padding: 0;
+    spacing: 0;
+}
+
+window {
+    location:         center;
+    width:            520px;
+    border:           2px;
+    border-color:     @accent;
+    border-radius:    8px;
+    background-color: @bg;
+}
+
+mainbox {
+    children: [ inputbar, message, listview ];
+}
+
+inputbar {
+    children:         [ prompt, entry ];
+    background-color: @bg-alt;
+    padding:          12px;
+    spacing:          8px;
+}
+
+prompt {
+    text-color:       @accent;
+    background-color: inherit;
+}
+
+entry {
+    placeholder:       "Search...";
+    placeholder-color: @fg-dim;
+    background-color:  inherit;
+}
+
+message {
+    background-color: @bg-alt;
+    padding:          8px 12px;
+}
+
+textbox {
+    background-color: inherit;
+}
+
+listview {
+    lines:            8;
+    columns:          1;
+    fixed-height:     true;
+    padding:          4px 0;
+    background-color: @bg;
+}
+
+element {
+    padding:       8px 12px;
+    spacing:       8px;
+    border-radius: 4px;
+}
+
+element selected.normal {
+    background-color: @accent;
+    text-color:       #ffffffff;
+}
+
+element normal.active {
+    text-color: @teal;
+}
+
+element selected.active {
+    background-color: @teal;
+    text-color:       #ffffffff;
+}
+
+element normal.urgent {
+    text-color: @urgent;
+}
+
+element selected.urgent {
+    background-color: @urgent;
+    text-color:       #ffffffff;
+}
+
+element-icon {
+    size: 24px;
+}
+
+element-text {
+    vertical-align: 0.5;
+}

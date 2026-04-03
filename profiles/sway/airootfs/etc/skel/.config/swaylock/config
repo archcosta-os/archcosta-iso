@@ -1,0 +1,61 @@
+# ArchCosta Swaylock Configuration
+
+daemonize
+show-failed-attempts
+ignore-empty-password
+show-keyboard-layout
+
+# Colors
+color=1a1a2e
+
+# Inside (default)
+inside-color=1a1a2e00
+inside-clear-color=1a1a2e00
+inside-caps-lock-color=1a1a2e00
+inside-ver-color=00b4d860
+inside-wrong-color=ff6b6b60
+
+# Line
+line-color=00000000
+line-clear-color=00000000
+line-caps-lock-color=00000000
+line-ver-color=00000000
+line-wrong-color=00000000
+
+# Ring
+ring-color=00b4d8
+ring-clear-color=22b8cf
+ring-caps-lock-color=ffd43b
+ring-ver-color=00b4d8
+ring-wrong-color=ff6b6b
+
+# Separator
+separator-color=00000000
+
+# Key highlight
+key-hl-color=22b8cf
+bs-hl-color=ff6b6b
+caps-lock-key-hl-color=ffd43b
+caps-lock-bs-hl-color=ff6b6b
+
+# Text
+text-color=e0e0e0
+text-clear-color=e0e0e0
+text-caps-lock-color=ffd43b
+text-ver-color=ffffff
+text-wrong-color=ff6b6b
+
+# Indicator
+indicator-radius=100
+indicator-thickness=10
+
+# Layout text
+layout-text-color=e0e0e0
+
+# Font
+font=Noto Sans
+font-size=24
+
+# Effect
+effect-blur=7x5
+effect-vignette=0.5:0.5
