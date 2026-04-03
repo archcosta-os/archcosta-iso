@@ -11,7 +11,7 @@ xdg-desktop-portal
 # Wayland core
 wayland
 wayland-protocols
-wlroots
+wlroots0.20
 
 # Display Manager
 sddm
