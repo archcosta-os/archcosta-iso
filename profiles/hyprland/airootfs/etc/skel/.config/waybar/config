@@ -1,70 +1,47 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 36,
+    "height": 38,
     "spacing": 4,
-    "margin-top": 6,
-    "margin-left": 12,
-    "margin-right": 12,
+    "margin-top": 8,
+    "margin-left": 10,
+    "margin-right": 10,
 
-    "modules-left": [
-        "hyprland/workspaces",
-        "hyprland/window"
-    ],
-    "modules-center": [
-        "clock"
-    ],
-    "modules-right": [
-        "tray",
-        "cpu",
-        "memory",
-        "pulseaudio",
-        "network",
-        "battery",
-        "custom/power"
-    ],
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-center": ["clock"],
+    "modules-right": ["tray", "pulseaudio", "network", "cpu", "memory", "battery", "custom/power"],
 
     "hyprland/workspaces": {
         "format": "{icon}",
         "format-icons": {
-            "1": "1",
-            "2": "2",
-            "3": "3",
-            "4": "4",
-            "5": "5",
-            "6": "6",
-            "7": "7",
-            "8": "8",
-            "9": "9",
-            "10": "0"
+            "1": "一",
+            "2": "二", 
+            "3": "三",
+            "4": "四",
+            "5": "五",
+            "6": "六",
+            "7": "七",
+            "8": "八",
+            "9": "九",
+            "10": "十"
         },
         "on-click": "activate",
-        "sort-by-number": true
+        "persistent-workspaces": {
+            "*": 5
+        }
     },
 
     "hyprland/window": {
         "format": "{}",
-        "max-length": 50,
-        "separate-outputs": true
+        "max-length": 60,
+        "separate-outputs": true,
+        "blur": true
     },
 
     "clock": {
-        "format": "  {:%H:%M}",
-        "format-alt": "  {:%A, %B %d, %Y  %H:%M:%S}",
-        "tooltip-format": "<tt><small>{calendar}</small></tt>",
-        "calendar": {
-            "mode": "year",
-            "mode-mon-col": 3,
-            "weeks-pos": "right",
-            "on-scroll": 1,
-            "format": {
-                "months": "<span color='#00b4d8'><b>{}</b></span>",
-                "days": "<span color='#e0e0e0'>{}</span>",
-                "weeks": "<span color='#22b8cf'><b>W{}</b></span>",
-                "weekdays": "<span color='#00b4d8'><b>{}</b></span>",
-                "today": "<span color='#ffffff'><b><u>{}</u></b></span>"
-            }
-        },
+        "format": "{:%H:%M}",
+        "format-alt": "{:%A, %b %d}",
+        "tooltip-format": "<small>{calendar}</small>",
         "interval": 1
     },
 
@@ -74,28 +51,22 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon}  {capacity}%",
+        "format": "{icon} {capacity}%",
         "format-charging": "  {capacity}%",
         "format-plugged": "  {capacity}%",
-        "format-alt": "{icon}  {time}",
-        "format-icons": ["", "", "", "", ""],
-        "tooltip-format": "{timeTo}\n{power} W"
+        "format-icons": ["", "", "", "", ""]
     },
 
     "network": {
         "format-wifi": "  {signalStrength}%",
         "format-ethernet": "  {ipaddr}",
-        "format-linked": "  No IP",
         "format-disconnected": "  Off",
-        "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{ipaddr}/{cidr}",
-        "tooltip-format-ethernet": "{ifname}\n{ipaddr}/{cidr}",
         "on-click": "nm-connection-editor"
     },
 
     "pulseaudio": {
-        "format": "{icon}  {volume}%",
-        "format-bluetooth": "  {volume}%",
-        "format-muted": "  Muted",
+        "format": "{icon} {volume}%",
+        "format-muted": "  muted",
         "format-icons": {
             "default": ["", "", ""]
         },
@@ -112,16 +83,16 @@
     "memory": {
         "format": "  {percentage}%",
         "interval": 2,
-        "tooltip-format": "{used:0.1f} GiB / {total:0.1f} GiB"
+        "tooltip": true
     },
 
     "tray": {
         "icon-size": 16,
-        "spacing": 8
+        "spacing": 10
     },
 
     "custom/power": {
-        "format": " ",
+        "format": "⏻",
         "on-click": "wlogout",
         "tooltip": false
     }

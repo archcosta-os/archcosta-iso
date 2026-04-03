@@ -11,28 +11,35 @@ xdg-desktop-portal
 # Wayland core
 wayland
 wayland-protocols
-wlroots0.20
 
 # Display Manager
 sddm
+qt5ct
+qt6ct
 
 # File manager
 dolphin
 kio
 kio-extras
+thunar
+ffmpegthumbs
 
 # Launcher & Notifications
 wofi
 mako
 libnotify
+dunst
 
 # Bar
 waybar
+wlogout
 
-# Screenshot
+# Screenshot & Recording
 grim
 slurp
 swappy
+wf-recorder
+obs-studio
 
 # Clipboard
 wl-clipboard
@@ -42,12 +49,14 @@ cliphist
 alacritty
 kitty
 foot
+wezterm
 
 # Audio
 pipewire
 pipewire-alsa
 pipewire-pulse
 wireplumber
+pavucontrol
 
 # Auth agent
 polkit-kde-agent
@@ -57,10 +66,15 @@ polkit-gnome
 ttf-dejavu
 noto-fonts
 noto-fonts-emoji
+jetbrains-mono-font
+ttf-fantasque-sans-mono
 
 # Themes & Appearance
 papirus-icon-theme
 nwg-look
+adw-gtk-theme
+gradience
+qt5-styleplugins
 
 # Applications
 firefox
@@ -68,13 +82,17 @@ vlc
 evince
 galculator
 mousepad
+qalculate-gtk
 
 # Wayland utilities
 xdg-user-dirs
 xdg-desktop-portal-gtk
 brightnessctl
 playerctl
+networkmanagerapplet
+blueman
 
 # System tools
 gparted
 gnome-disk-utility
+
