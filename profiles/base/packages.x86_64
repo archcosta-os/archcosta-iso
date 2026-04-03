@@ -84,12 +84,15 @@ fastfetch
 reflector
 nano
 vim
+# Developer tools (for AUR)
+base-devel
 git
 ufw
 yad
 
 # Installer (built from archcosta-pkgbuild, hosted in custom repo)
 archcosta-installer
+archcosta-center
 
 # Hardware
 xdg-utils
