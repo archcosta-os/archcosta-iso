@@ -58,6 +58,14 @@ if command -v plymouth-set-default-theme &>/dev/null; then
     plymouth-set-default-theme archcosta 2>/dev/null || true
 fi
 
+# Set ArchCosta OS identity (after filesystem package)
+if [[ -f /usr/lib/os-release.archcosta ]]; then
+    cp /usr/lib/os-release.archcosta /usr/lib/os-release
+fi
+if [[ -f /etc/lsb-release.archcosta ]]; then
+    cp /etc/lsb-release.archcosta /etc/lsb-release
+fi
+
 # Clean up to reduce ISO size
 rm -rf /var/cache/pacman/pkg/*
 rm -f /var/log/pacman.log
