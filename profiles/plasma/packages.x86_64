@@ -19,6 +19,11 @@ plasma-systemmonitor
 sddm
 sddm-kcm
 
+# ArchCosta Tools
+archcosta-installer
+archcosta-center
+fastfetch
+
 # Themes & Appearance
 papirus-icon-theme
 breeze-gtk
@@ -32,3 +37,6 @@ elisa
 kde-gtk-config
 xdg-desktop-portal-kde
 phonon-qt6-vlc
+
+# ArchCosta Settings
+archcosta-plasma-settings

@@ -7,6 +7,11 @@ gnome-tweaks
 # Display Manager
 gdm
 
+# ArchCosta Tools
+archcosta-installer
+archcosta-center
+fastfetch
+
 # Themes & Appearance
 papirus-icon-theme
 
@@ -23,3 +28,6 @@ gnome-disk-utility
 
 # GNOME Integration
 xdg-desktop-portal-gnome
+
+# ArchCosta Settings
+archcosta-gnome-settings

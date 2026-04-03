@@ -21,23 +21,25 @@ pipewire
 pipewire-alsa
 pipewire-pulse
 wireplumber
+pavucontrol
 
 # Fonts
 ttf-dejavu
 noto-fonts
+noto-fonts-emoji
 
 # Themes & Appearance
 papirus-icon-theme
 adwaita-icon-theme
+adw-gtk-theme
 
 # Applications
 firefox
 vlc
 evince
-galculator
 mousepad
 ristretto
 
-# System tools
-gparted
-gnome-disk-utility
+# Utilities
+xdg-user-dirs
+networkmanagerapplet

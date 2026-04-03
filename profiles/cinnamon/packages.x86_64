@@ -11,6 +11,11 @@ gnome-terminal
 # Display Manager
 sddm
 
+# ArchCosta Tools
+archcosta-installer
+archcosta-center
+fastfetch
+
 # Audio
 pipewire
 pipewire-alsa
@@ -40,3 +45,6 @@ gnome-disk-utility
 xdg-desktop-portal-xapp
 cinnamon-control-center
 cinnamon-screensaver
+
+# ArchCosta Settings
+archcosta-cinnamon-settings

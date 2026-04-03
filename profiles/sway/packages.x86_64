@@ -23,11 +23,11 @@ libnotify
 
 # Bar
 waybar
+wlogout
 
 # Terminal
 foot
 alacritty
-kitty
 
 # Screenshot
 grim
@@ -43,6 +43,7 @@ pipewire
 pipewire-alsa
 pipewire-pulse
 wireplumber
+pavucontrol
 
 # Auth agent
 polkit-kde-agent
@@ -55,20 +56,17 @@ noto-fonts-emoji
 
 # Themes & Appearance
 papirus-icon-theme
-nwg-look
+adw-gtk-theme
 
 # Applications
 firefox
 vlc
 evince
-galculator
 mousepad
 
 # Wayland utilities
 xdg-user-dirs
 brightnessctl
 playerctl
-
-# System tools
-gparted
-gnome-disk-utility
+networkmanagerapplet
+blueman

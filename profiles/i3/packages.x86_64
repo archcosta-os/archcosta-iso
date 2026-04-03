@@ -11,6 +11,8 @@ sddm
 
 # File manager
 thunar
+thunar-archive-plugin
+xfce4-thunar-archive-plugin
 
 # Launcher & Notifications
 rofi
@@ -31,13 +33,13 @@ flameshot
 
 # Terminal
 alacritty
-kitty
 
 # Audio
 pipewire
 pipewire-alsa
 pipewire-pulse
 wireplumber
+pavucontrol
 
 # Auth agent
 polkit-gnome
@@ -45,6 +47,7 @@ polkit-gnome
 # Fonts
 ttf-dejavu
 noto-fonts
+noto-fonts-emoji
 
 # Themes & Appearance
 papirus-icon-theme
@@ -65,7 +68,4 @@ xss-lock
 arandr
 xclip
 xdg-user-dirs
-
-# System tools
-gparted
-gnome-disk-utility
+networkmanagerapplet
