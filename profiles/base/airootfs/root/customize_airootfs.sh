@@ -47,6 +47,12 @@ pacman-key --populate archlinux
 # Set default shell for new users to zsh
 sed -i 's|/bin/bash|/bin/zsh|' /etc/default/useradd
 
+# Skip zsh newuser installation wizard for all users
+echo "SKIP_ZSH_NEWUSER_INSTALL=1" >> /etc/environment
+
+# Copy skel files to root home (for root user)
+cp -r /etc/skel/ /root/
+
 # Clean up to reduce ISO size
 rm -rf /var/cache/pacman/pkg/*
 rm -f /var/log/pacman.log
