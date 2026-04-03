@@ -2,8 +2,8 @@
 # ArchCosta Cinnamon Edition — Post-build customization
 set -euo pipefail
 
-# Enable LightDM
-systemctl enable lightdm.service
+# Enable SDDM
+systemctl enable sddm.service
 
 # Set default session
 mkdir -p /var/lib/AccountsService/users

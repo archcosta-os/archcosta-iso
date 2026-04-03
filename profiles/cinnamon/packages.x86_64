@@ -9,8 +9,7 @@ xreader
 gnome-terminal
 
 # Display Manager
-lightdm
-lightdm-slick-greeter
+sddm
 
 # Themes & Appearance
 papirus-icon-theme

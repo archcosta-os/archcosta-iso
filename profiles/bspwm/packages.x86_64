@@ -5,8 +5,7 @@ bspwm
 sxhkd
 
 # Display Manager
-lightdm
-lightdm-gtk-greeter
+sddm
 
 # Bar
 polybar

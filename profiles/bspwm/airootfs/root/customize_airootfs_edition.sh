@@ -2,7 +2,7 @@
 # ArchCosta bspwm Edition — Post-build customization
 set -euo pipefail
 
-systemctl enable lightdm.service
+systemctl enable sddm.service
 
 mkdir -p /var/lib/AccountsService/users
 cat > /var/lib/AccountsService/users/liveuser <<EOF

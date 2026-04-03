@@ -14,9 +14,7 @@ xfce4-power-manager
 xfce4-terminal
 
 # Display Manager
-lightdm
-lightdm-gtk-greeter
-lightdm-gtk-greeter-settings
+sddm
 
 # Themes & Appearance
 papirus-icon-theme
