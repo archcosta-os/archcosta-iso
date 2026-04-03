@@ -89,7 +89,7 @@ ufw
 yad
 
 # Installer (built from archcosta-pkgbuild, hosted in custom repo)
-archcosta-calamares
+archcosta-installer
 
 # Hardware
 xdg-utils

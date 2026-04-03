@@ -30,7 +30,7 @@ center-new-windows=true
 dynamic-workspaces=true
 
 [org/gnome/shell]
-favorite-apps=['org.gnome.Nautilus.desktop', 'firefox.desktop', 'org.gnome.TextEditor.desktop', 'org.gnome.Terminal.desktop', 'calamares.desktop']
+favorite-apps=['org.gnome.Nautilus.desktop', 'firefox.desktop', 'org.gnome.TextEditor.desktop', 'org.gnome.Terminal.desktop', 'archcosta-installer.desktop']
 
 [org/gnome/desktop/input-sources]
 sources=[('xkb', 'us')]
