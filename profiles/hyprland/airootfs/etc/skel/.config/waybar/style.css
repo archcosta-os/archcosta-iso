@@ -1,0 +1,161 @@
+/* ArchCosta Waybar Theme */
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free", sans-serif;
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(26, 26, 46, 0.85);
+    border-radius: 10px;
+    color: #e0e0e0;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+tooltip {
+    background: #1a1a2e;
+    border: 1px solid #00b4d8;
+    border-radius: 8px;
+    color: #e0e0e0;
+}
+
+tooltip label {
+    color: #e0e0e0;
+}
+
+#workspaces {
+    margin: 4px 8px 4px 8px;
+    background: transparent;
+}
+
+#workspaces button {
+    padding: 2px 8px;
+    margin: 0 2px;
+    color: #e0e0e0;
+    background: transparent;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+#workspaces button.active {
+    color: #ffffff;
+    background: #00b4d8;
+    border-radius: 6px;
+}
+
+#workspaces button.urgent {
+    color: #ffffff;
+    background: #e06c75;
+    border-radius: 6px;
+}
+
+#workspaces button:hover {
+    color: #ffffff;
+    background: rgba(0, 180, 216, 0.4);
+    border-radius: 6px;
+}
+
+#window {
+    margin: 4px 0;
+    padding: 0 12px;
+    color: #e0e0e0;
+    font-weight: normal;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#tray,
+#custom-power {
+    padding: 4px 12px;
+    margin: 4px 2px;
+    color: #e0e0e0;
+    background: rgba(0, 180, 216, 0.1);
+    border-radius: 8px;
+}
+
+#clock {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+#battery {
+    color: #22b8cf;
+}
+
+#battery.charging {
+    color: #98c379;
+}
+
+#battery.warning:not(.charging) {
+    color: #e5c07b;
+}
+
+#battery.critical:not(.charging) {
+    color: #e06c75;
+    animation: blink 1s linear infinite;
+}
+
+@keyframes blink {
+    to {
+        color: #ffffff;
+        background: #e06c75;
+    }
+}
+
+#network {
+    color: #22b8cf;
+}
+
+#network.disconnected {
+    color: #e06c75;
+}
+
+#pulseaudio {
+    color: #00b4d8;
+}
+
+#pulseaudio.muted {
+    color: #666666;
+}
+
+#cpu {
+    color: #22b8cf;
+}
+
+#memory {
+    color: #00b4d8;
+}
+
+#tray {
+    background: transparent;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+}
+
+#custom-power {
+    color: #e06c75;
+    background: rgba(224, 108, 117, 0.1);
+    margin-right: 4px;
+    padding: 4px 10px;
+}
+
+#custom-power:hover {
+    color: #ffffff;
+    background: #e06c75;
+}
