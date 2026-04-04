@@ -1,9 +1,0 @@
-[Daemon]
-Autolock=true
-LockGrace=5
-LockOnResume=true
-Timeout=10
-
-[Greeter][Wallpaper][org.kde.image][General]
-Image=/usr/share/archcosta/wallpapers/default-dark.png
-PreviewImage=/usr/share/archcosta/wallpapers/default-dark.png
