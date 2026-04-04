@@ -5,6 +5,11 @@ set -euo pipefail
 # Enable GDM
 systemctl enable gdm.service
 
+# Enable system services
+systemctl enable bluetooth.service
+systemctl enable avahi-daemon.service
+systemctl enable usbguard.service
+
 # Compile dconf database
 dconf update
 

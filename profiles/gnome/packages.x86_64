@@ -7,6 +7,13 @@ gnome-tweaks
 # Display Manager
 gdm
 
+# System services & tools
+fwupd
+usbguard
+avahi
+bluez
+bluez-utils
+
 # ArchCosta Tools
 archcosta-installer
 archcosta-center
