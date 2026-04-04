@@ -42,4 +42,6 @@ ristretto
 
 # Utilities
 xdg-user-dirs
-networkmanagerapplet
+
+# ArchCosta Settings
+archcosta-xfce-settings

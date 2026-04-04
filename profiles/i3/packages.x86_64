@@ -68,4 +68,6 @@ xss-lock
 arandr
 xclip
 xdg-user-dirs
-networkmanagerapplet
+
+# ArchCosta Settings
+archcosta-i3-settings

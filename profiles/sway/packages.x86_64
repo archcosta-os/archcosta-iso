@@ -68,5 +68,7 @@ mousepad
 xdg-user-dirs
 brightnessctl
 playerctl
-networkmanagerapplet
 blueman
+
+# ArchCosta Settings
+archcosta-sway-settings

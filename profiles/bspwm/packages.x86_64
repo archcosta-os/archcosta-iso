@@ -65,5 +65,7 @@ playerctl
 xss-lock
 xclip
 xdg-user-dirs
-networkmanagerapplet
 arandr
+
+# ArchCosta Settings
+archcosta-bspwm-settings
