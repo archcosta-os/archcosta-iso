@@ -10,7 +10,6 @@ sddm
 # File manager
 thunar
 thunar-archive-plugin
-xfce4-thunar-archive-plugin
 thunar-volman
 
 # Launcher & Notifications

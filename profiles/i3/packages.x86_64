@@ -12,7 +12,6 @@ sddm
 # File manager
 thunar
 thunar-archive-plugin
-xfce4-thunar-archive-plugin
 
 # Launcher & Notifications
 rofi

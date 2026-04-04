@@ -23,7 +23,6 @@ libnotify
 
 # Bar
 waybar
-wlogout
 
 # Terminal
 foot
