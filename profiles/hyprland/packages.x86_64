@@ -87,10 +87,6 @@ brightnessctl
 playerctl
 blueman
 
-# System tools
-gparted
-gnome-disk-utility
-
 # ArchCosta Settings
 archcosta-hyprland-settings
 
