@@ -49,15 +49,8 @@ alsa-utils
 # Graphics
 mesa
 xorg-server
-xorg-xinit
+xorg-init
 xorg-xrandr
-
-# NVIDIA (open kernel modules + userspace)
-nvidia-open
-nvidia-utils
-lib32-nvidia-utils
-nvidia-settings
-egl-wayland
 
 # Fonts
 noto-fonts
