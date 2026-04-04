@@ -22,4 +22,5 @@ file_permissions=(
     ["/root/customize_airootfs_edition.sh"]="0:0:755"
     ["/usr/local/bin/archcosta-install"]="0:0:755"
     ["/usr/local/bin/archcosta-welcome"]="0:0:755"
+    ["/usr/share/plymouth"]="0:0:755"
 )

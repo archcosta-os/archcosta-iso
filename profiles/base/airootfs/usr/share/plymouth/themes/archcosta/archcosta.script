@@ -1,0 +1,88 @@
+// ArchCosta Plymouth Boot Splash Script
+
+Window.SetBackgroundTopColor(0.10, 0.10, 0.18);
+Window.SetBackgroundBottomColor(0.06, 0.06, 0.12);
+
+logo_image = Image("images/logo.png");
+logo_sprite = Sprite(logo_image);
+logo_sprite.SetX(Window.GetWidth() / 2 - logo_image.GetWidth() / 2);
+logo_sprite.SetY(Window.GetHeight() / 2 - logo_image.GetHeight() / 2 - 40);
+logo_sprite.SetOpacity(1);
+
+// Progress dots
+NUM_DOTS = 5;
+DOT_SIZE = 12;
+DOT_SPACING = 30;
+
+dots = [];
+dot_opacities = [];
+
+for (i = 0; i < NUM_DOTS; i++) {
+    dots[i] = Sprite();
+    dot_opacities[i] = 0.3;
+}
+
+progress_counter = 0;
+
+fun draw_dots() {
+    total_width = NUM_DOTS * DOT_SIZE + (NUM_DOTS - 1) * DOT_SPACING;
+    start_x = Window.GetWidth() / 2 - total_width / 2;
+    y = Window.GetHeight() / 2 + logo_image.GetHeight() / 2 + 30;
+
+    for (i = 0; i < NUM_DOTS; i++) {
+        dot_image = Image("images/dot.png");
+        dots[i].SetImage(dot_image);
+        dots[i].SetX(start_x + i * (DOT_SIZE + DOT_SPACING));
+        dots[i].SetY(y);
+        dots[i].SetOpacity(dot_opacities[i]);
+    }
+}
+
+fun refresh_callback() {
+    progress_counter++;
+
+    active_dot = Math.Int(progress_counter / 15) % NUM_DOTS;
+
+    for (i = 0; i < NUM_DOTS; i++) {
+        if (i == active_dot)
+            dot_opacities[i] = 1.0;
+        else
+            dot_opacities[i] = 0.3;
+    }
+
+    draw_dots();
+}
+
+Plymouth.SetRefreshFunction(refresh_callback);
+
+fun display_normal_callback() {
+    // Normal boot — no special action needed
+}
+
+fun display_password_callback(prompt, bullets) {
+    // Disk encryption password prompt
+    password_label = Image.Text(prompt, 0.88, 0.88, 0.82);
+    password_sprite = Sprite(password_label);
+    password_sprite.SetX(Window.GetWidth() / 2 - password_label.GetWidth() / 2);
+    password_sprite.SetY(Window.GetHeight() / 2 + logo_image.GetHeight() / 2 + 80);
+
+    bullet_string = "";
+    for (i = 0; i < bullets; i++)
+        bullet_string += "● ";
+
+    bullet_image = Image.Text(bullet_string, 0.0, 0.71, 0.85);
+    bullet_sprite = Sprite(bullet_image);
+    bullet_sprite.SetX(Window.GetWidth() / 2 - bullet_image.GetWidth() / 2);
+    bullet_sprite.SetY(Window.GetHeight() / 2 + logo_image.GetHeight() / 2 + 110);
+}
+
+fun display_message_callback(text) {
+    message_image = Image.Text(text, 0.88, 0.88, 0.82);
+    message_sprite = Sprite(message_image);
+    message_sprite.SetX(Window.GetWidth() / 2 - message_image.GetWidth() / 2);
+    message_sprite.SetY(Window.GetHeight() - 50);
+}
+
+Plymouth.SetDisplayNormalFunction(display_normal_callback);
+Plymouth.SetDisplayPasswordFunction(display_password_callback);
+Plymouth.SetMessageFunction(display_message_callback);

@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=ArchCosta
+Description=ArchCosta OS boot splash theme
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/archcosta/images
+ScriptFile=/usr/share/plymouth/themes/archcosta/archcosta.script
