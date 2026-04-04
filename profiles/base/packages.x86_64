@@ -49,7 +49,7 @@ alsa-utils
 # Graphics
 mesa
 xorg-server
-xorg-init
+xorg-xinit
 xorg-xrandr
 
 # Fonts
