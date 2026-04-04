@@ -6,4 +6,4 @@ Icon=archcosta
 Terminal=false
 X-GNOME-Autostart-enabled=true
 StartupNotify=false
-OnlyShowIn=XFCE;Cinnamon;GNOME;KDE;
+OnlyShowIn=XFCE;Cinnamon;GNOME;KDE;Hyprland;Sway;i3;bspwm;

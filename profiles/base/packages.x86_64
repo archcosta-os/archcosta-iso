@@ -94,6 +94,7 @@ yad
 # Installer (built from archcosta-pkgbuild, hosted in custom repo)
 archcosta-installer
 archcosta-center
+archcosta-welcome
 
 # Hardware
 xdg-utils

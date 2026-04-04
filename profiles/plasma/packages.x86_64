@@ -19,9 +19,16 @@ plasma-systemmonitor
 sddm
 sddm-kcm
 
+# System tools
+bluez
+bluez-utils
+packagekit-qt6
+webkit2gtk-6.0
+
 # ArchCosta Tools
 archcosta-installer
 archcosta-center
+archcosta-plasma-settings
 fastfetch
 
 # Themes & Appearance
