@@ -100,38 +100,40 @@ jobs:
           retention-days: 7
           compression-level: 0
 
-  release:
-    needs: build
-    if: github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
-    name: Create Release
-
-    steps:
-      - name: Download all artifacts
-        uses: actions/download-artifact@v4
-        with:
-          path: artifacts
-          merge-multiple: true
-
-      - name: Create GitHub Release
-        uses: softprops/action-gh-release@v2
-        with:
-          tag_name: build-${{ github.run_number }}
-          name: "ArchCosta Build #${{ github.run_number }}"
-          body: |
-            ## ArchCosta ISO Build
-
-            **Edition(s):** `${{ inputs.edition }}`
-            **Triggered by:** @${{ github.actor }}
-            **Commit:** ${{ github.sha }}
-
-            ### Downloads
-            Download the ISO for your edition and verify with the `.sha256` checksum file.
-
-            ### Verify
-            ```bash
-            sha256sum -c archcosta-<edition>-*.iso.sha256
-            ```
-          files: artifacts/**/*
-          draft: false
-          prerelease: true
+  # Release disabled - ISO size too large for GitHub releases
+  # Use GitHub Pages or external hosting instead
+  # release:
+  #   needs: build
+  #   if: github.ref == 'refs/heads/main'
+  #   runs-on: ubuntu-latest
+  #   name: Create Release
+  #
+  #   steps:
+  #     - name: Download all artifacts
+  #       uses: actions/download-artifact@v4
+  #       with:
+  #         path: artifacts
+  #         merge-multiple: true
+  #
+  #     - name: Create GitHub Release
+  #       uses: softprops/action-gh-release@v2
+  #       with:
+  #         tag_name: build-${{ github.run_number }}
+  #         name: "ArchCosta Build #${{ github.run_number }}"
+  #         body: |
+  #           ## ArchCosta ISO Build
+  #
+  #           **Edition(s):** `${{ inputs.edition }}`
+  #           **Triggered by:** @${{ github.actor }}
+  #           **Commit:** ${{ github.sha }}
+  #
+  #           ### Downloads
+  #           Download the ISO for your edition and verify with the `.sha256` checksum file.
+  #
+  #           ### Verify
+  #           ```bash
+  #           sha256sum -c archcosta-<edition>-*.iso.sha256
+  #           ```
+  #         files: artifacts/**/*
+  #         draft: false
+  #         prerelease: true
