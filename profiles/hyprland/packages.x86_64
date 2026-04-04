@@ -32,7 +32,6 @@ dunst
 
 # Bar
 waybar
-wlogout
 
 # Screenshot & Recording
 grim
@@ -66,15 +65,12 @@ polkit-gnome
 ttf-dejavu
 noto-fonts
 noto-fonts-emoji
-jetbrains-mono-font
 ttf-fantasque-sans-mono
 
 # Themes & Appearance
 papirus-icon-theme
 nwg-look
 adw-gtk-theme
-gradience
-qt5-styleplugins
 
 # Applications
 firefox
@@ -89,7 +85,6 @@ xdg-user-dirs
 xdg-desktop-portal-gtk
 brightnessctl
 playerctl
-networkmanagerapplet
 blueman
 
 # System tools
