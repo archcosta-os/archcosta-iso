@@ -67,6 +67,7 @@ xss-lock
 arandr
 xclip
 xdg-user-dirs
+libappindicator-gtk3
 
 # ArchCosta Settings
 archcosta-i3-settings

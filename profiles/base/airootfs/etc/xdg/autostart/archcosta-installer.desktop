@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=Install ArchCosta OS
+GenericName=System Installer
+Comment=Install ArchCosta OS to your computer
+Exec=/usr/bin/archcosta-installer
+Icon=archcosta
+Terminal=false
+Categories=System;Settings;Installer;
+Keywords=installer;archcosta;install;setup;
+StartupNotify=true
+StartupWMClass=installer
+X-GNOME-Autostart-enabled=false

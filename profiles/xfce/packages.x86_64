@@ -13,6 +13,9 @@ xfce4-notifyd
 xfce4-power-manager
 xfce4-terminal
 
+# Appindicator support
+libappindicator-gtk3
+
 # Display Manager
 sddm
 

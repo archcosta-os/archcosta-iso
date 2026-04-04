@@ -65,6 +65,7 @@ xss-lock
 xclip
 xdg-user-dirs
 arandr
+libappindicator-gtk3
 
 # ArchCosta Settings
 archcosta-bspwm-settings
