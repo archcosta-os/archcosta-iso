@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <channel name="xfce4-panel" version="1.0">
-  <property name="panel-position" type="uint">1</property>
+  <property name="panel-position" type="uint">2</property>
   <property name="panel-length" type="uint">100</property>
   <property name="panel-size" type="uint">32</property>
   <property name="panel-horizontal" type="bool">true</property>
